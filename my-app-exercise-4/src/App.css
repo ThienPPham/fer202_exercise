@@ -1,7 +1,8 @@
 @font-face {
-  font-family: Market ; 
+  font-family: Market;
   src: url(./fonts/Market\ Condensed\ Medium.otf);
 }
+
 @font-face {
   font-family: Imogen;
   src: url(./fonts/Imogen\ Agnes.otf);
@@ -46,25 +47,56 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.text1{
+/*Exercise2*/
+.text1 {
   font-size: 30px;
   color: #32576a;
   margin: 10px 1px 1px 1px;
   font-family: Market;
 }
-.text2{
+
+.text2 {
   font-size: 30px;
   color: #a5a5a5;
   margin: 1px;
   font-family: Imogen;
 }
-.text3{
+
+.text3 {
   font-size: 20px;
   color: #000000;
 }
 
+/*Exercise3*/
+.list1 {
+  margin: 0;
+  padding: 0;
+  background-color: #555555;
+  height: 50px;
+}
+
+.list1 li {
+  display: inline-block;
+
+}
+
+.list1 li a {
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: white;
+}
+
+.list1 .home {
+  background-color: #38aa6b;
+}
+
+.list1 li a:hover {
+  background-color: #000000;
+}
