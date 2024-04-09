@@ -10,8 +10,9 @@ import Exercise3Data from "./pages/exercise3data";
 import SumDisplay from "./pages/exercise3data1";
 import DisplayResult from "./pages/Exercise3data2";
 import DisplayQueryParameters from "./pages/exercise3data3";
+import React, { Component } from 'react';
 
-export default function App() {
+function App() {
   return (
     <div>
       <BrowserRouter>
@@ -32,3 +33,37 @@ export default function App() {
     </div>
   )
 }
+
+/*class App extends Component {
+  componentDidMount() {
+    // Call the promise function when the component mounts
+    this.getRandomNumber()
+      .then(number => {
+        console.log("Random number larger than 5:", number);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+  }
+
+  getRandomNumber() {
+    return new Promise((resolve, reject) => {
+      const randomNumber = Math.floor(Math.random() * 10) + 1; // Generate random number between 1 and 10
+      if (randomNumber > 5) {
+        resolve(randomNumber); // Resolve with the random number if it's larger than 5
+      } else {
+        reject("Error"); // Reject with an error message if the number is 5 or less
+      }
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Promise Example</h1>
+        <p>Please check the console for the result.</p>
+      </div>
+    );
+  }
+}*/
+export default App;
