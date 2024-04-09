@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "my-app-exercise-4"
+		},
+		{
+			"path": "bootstrap5-exercise5"
 		}
-	]
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "bootstrap5-exercise5"
+	}
 }
