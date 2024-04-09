@@ -1,3 +1,13 @@
  npx create-react-app name-app
 
 npm install --save browser-router
+
+npm install bootstrap
+npm install jquery
+npm install popper.js --save
+
+npm install react-bootstrap bootstrap
+
+npm install --save-dev @fortawesome/fontawesome-free
+
+
