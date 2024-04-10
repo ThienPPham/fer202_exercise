@@ -2,6 +2,8 @@
 
 npm install --save browser-router
 
+npm install react react-dom
+
 npm install bootstrap
 npm install jquery
 npm install popper.js --save
