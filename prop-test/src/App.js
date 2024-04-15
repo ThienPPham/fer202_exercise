@@ -7,6 +7,7 @@ import CompanyRender from './components/CompanyRender';
 import NoContext from './components/NoContext';
 import WithContext from './components/WithContext';
 import CounterEffect from './components/CounterEffect';
+import CounterReducer from './components/CounterReducer';
 
 const companies = [
   { id: '1', name: "Company One", category: "Finance", start: 1981, end: 2004 },
@@ -29,6 +30,7 @@ function App() {
       <NoContext name='Ellie' />
       <WithContext name='London' />
       <CounterEffect />
+      <CounterReducer />
     </div>
   );
 }
