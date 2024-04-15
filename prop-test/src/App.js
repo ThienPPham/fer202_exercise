@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Counter from './components/Counter';
 import ChangeColor from './components/ChangeColor';
 import CompanyRender from './components/CompanyRender';
+import NoContext from './components/NoContext';
+import WithContext from './components/WithContext';
 
 const companies = [
   { name: "Company One", category: "Finance", start: 1981, end: 2004 },
@@ -23,6 +25,8 @@ function App() {
       <Counter></Counter>
       <ChangeColor />
       <CompanyRender companies = {companies}/>
+      <NoContext name = 'Ellie'/>
+      <WithContext name = 'London'/>
     </div>
   );
 }
