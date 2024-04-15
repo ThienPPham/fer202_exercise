@@ -5,7 +5,7 @@ const CompanyRender = (props) => {
     const [filterCompanies, setFilterCompanies] = useState(props.companies);
 
     const handleSubmit = () => {
-        const filter = props.companies.filter (company => company.start>inputText);
+        const filter = props.companies.filter(company => company.start > inputText);
         setFilterCompanies(filter);
     }
     const handleInputChange = (event) => {
@@ -14,15 +14,15 @@ const CompanyRender = (props) => {
 
     return (
         <>
-        <input type='text' value={inputText} onChange={handleInputChange} />
-        <button onClick={(e) => handleSubmit()}>
-            Click me
-        </button>
-        {
-            filterCompanies.map ((company) => (
-                <h1>{company.name}</h1>
-            ))
-        }
+            <input type='text' value={inputText} onChange={handleInputChange} />
+            <button onClick={(e) => handleSubmit()}>
+                Click me
+            </button>
+            {
+                filterCompanies.map((company, index) => (
+                    <h1 key={index}>{company.name}</h1>
+                ))
+            }
         </>
     )
 };
