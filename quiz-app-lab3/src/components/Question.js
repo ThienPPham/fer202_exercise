@@ -5,7 +5,7 @@ const Question = ({ question, options, selectedAnswer, onAnswerSelect }) => (
         <h3>{question}</h3>
         <ul>
             {options.map((option, index) => (
-                <li key={index}>
+                <li key={index} className='list-ratio'>
                     <label>
                         <input
                             type="radio"

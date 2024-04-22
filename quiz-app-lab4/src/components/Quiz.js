@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 
+// Define the quiz data
 export const quizData = [
     {
         question: 'What is ReactJS?',
@@ -14,7 +15,36 @@ export const quizData = [
 ];
 
 const Quiz = () => {
-    const [userAnswers, setUserAnswers] = useState(Array(quizData.length).fill(''));
+    // State to manage user input
+    const [userAnswers, setUserAnswers] = useState(Array(quizData.length).fill('')); // Initialize with empty strings
+
+    // Function to handle user input for each question
+    const handleUserInput = (index, event) => {
+        const updatedAnswers = [...userAnswers];
+        updatedAnswers[index] = event.target.value;
+        setUserAnswers(updatedAnswers);
+    };
+
+    // Function to check if the selected answer is correct
+    const checkAnswer = (index) => {
+        return userAnswers[index] === quizData[index].correctAnswer;
+    };
+
+    // Calculate score
+    const calculateScore = () => {
+        let score = 0;
+        for (let i = 0; i < quizData.length; i++) {
+            if (checkAnswer(i)) {
+                score++;
+            }
+        }
+        return score;
+    };
+
+    // Render the questions and answer options
+    useEffect(() => {
+        console.log(userAnswers); // Just for demonstration, you can replace this with rendering logic
+    }, [userAnswers]);
 
     return (
         <div>
@@ -24,31 +54,20 @@ const Quiz = () => {
                     <ul>
                         {questionData.answers.map((answer, answerIndex) => (
                             <li key={answerIndex}>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        checked={userAnswers[index] === answer}
-                                        onChange={() => {
-                                            const updatedUserAnswers = [...userAnswers];
-                                            updatedUserAnswers[index] = answer;
-                                            setUserAnswers(updatedUserAnswers);
-                                        }}
-                                    />
-                                    {answer}
-                                </label>
+                                <input
+                                    type="radio"
+                                    name={`question${index}`}
+                                    value={answer}
+                                    onChange={(event) => handleUserInput(index, event)}
+                                />
+                                {answer}
                             </li>
                         ))}
                     </ul>
+                    <p>{userAnswers[index] && checkAnswer(index) ? 'Correct!' : 'Incorrect!'}</p>
                 </div>
             ))}
-
-            <div>
-                {quizData.map((questionData, index) => (
-                    <p key={index}>
-                        Your answer for question {index + 1} is {userAnswers[index] === questionData.correctAnswer ? 'correct' : 'incorrect'}
-                    </p>
-                ))}
-            </div>
+            <h4>Score: {calculateScore()} / {quizData.length}</h4>
         </div>
     );
 };
