@@ -1,0 +1,25 @@
+{
+    "videos": [
+      {
+        "id": 1,
+        "title": "React Tutorial for Beginners",
+        "description": "This is the first video",
+        "url": "https://www.youtube.com/embed/SqcY0GlETPk?si=Uh6d9BmNwizQ7lh-",
+        "duration": "5:30",
+        "image": "https://example.com/video1.jpg",
+        "comments": [
+          {
+            "id": 1,
+            "text": "Great video!",
+            "user": "User1"
+          },
+          {
+            "id": 2,
+            "text": "Thanks for sharing!",
+            "user": "User2"
+          }
+        ]
+      }
+    ]
+  }
+  
